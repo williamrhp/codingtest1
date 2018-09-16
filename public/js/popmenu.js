@@ -28,10 +28,12 @@ if (!document.documentElement.className.includes("no-touch")) {
         var timestart = currbox.substring(3,currbox.length);
         $("#startday").val(daystart);
         $("#starttime").val(timestart);
+        $("#endday").val("selecteday");
+        $("#endtime").val("selectetime");
         
         //intentionally prevents mobile scheduling outside of form entry path
         $("#"+currbox).prop("checked", false);
-        event.stopPropogation();
+        e.stopPropogation();
     });
     
     //code for cancel button
@@ -86,7 +88,7 @@ if (!document.documentElement.className.includes("no-touch")) {
             else {tinde = timeIndex.length - 1;}
             
             for (tindb; tindb<=tinde; tindb++){
-                $("#" + dayIndex[dind] + timeIndex[tindb]).prop('checked', true);
+                $("#" + dayIndex[dind] + timeIndex[tindb]).prop("checked", true);
                 // console.log("" + dayIndex[dind] + timeIndex[tindb]);
             }
         }
